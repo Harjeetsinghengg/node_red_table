@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../uibuilder/images/node-blue.ico">
+
+    <title>Blank template - Node-RED uibuilder</title>
+    <meta name="description" content="Node-RED uibuilder - Blank template">
+
+    <!-- Your own CSS (defaults to loading uibuilders css)-->
+    <link type="text/css" rel="stylesheet" href="./index.css" media="all">
+
+    <!-- #region Supporting Scripts. These MUST be in the right order. Note no leading / -->
+    <script defer src="../uibuilder/uibuilder.iife.min.js"></script>
+    <!-- <script defer src="./index.js">/* OPTIONAL: Put your custom code in that */</script> -->
+    <!-- #endregion -->
+
+</head><body class="uib">
+    
+    <!--<h1 class="with-subtitle">ARMFIELD </h1>-->
+    <img src="C:\Users\HARJEET SINGH\.node-red\projects\NodeRed_Table\uibuilder\Datalog\src\download.png" alt="armfield" width="250" height="60" class="”left”>
+    <div role="doc-subtitle">   Product Code TH-7</div>
+    
+    
+
+    <div id="more"><!-- '#more' is used as a parent for dynamic HTML content in examples --></div>
+
+</body></html>
+
+<!DOCTYPE html >
+<html>
+<head>
+  <title></title>
+    <style type="text/css">
+        body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+        
+        table td
+        {
+            padding: 5px;
+        }
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      table, th, td {
+          border: 2px solid rgb(112, 56, 56);
+      }
+        </style>        
+        </head>
+<body>
+  <table style="width:100%">
+    <caption><h2>PROCESS DATALOG</h2></caption>
+    
+    <tr>
+      <th>
+    
+    <script type="text/javascript">
+        function Upload() {
+            var fileUpload = document.getElementById("fileUpload");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+            if (regex.test(fileUpload.value.toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var table = document.createElement("table");
+                        var rows = e.target.result.split("\n");
+                        for (var i = 0; i < rows.length; i++) {
+                            var cells = rows[i].split(",");
+                            if (cells.length > 1) {
+                                var row = table.insertRow(-1);
+                                for (var j = 0; j < cells.length; j++) {
+                                    var cell = row.insertCell(-1);
+                                    cell.innerHTML = cells[j];
+                                }
+                            }
+                        }
+                        var dvCSV = document.getElementById("dvCSV");
+                        dvCSV.innerHTML = "";
+                        dvCSV.appendChild(table);
+                    }
+                    reader.readAsText(fileUpload.files[0]);
+                } else {
+                    alert("This browser does not support HTML5.");
+                }
+            } else {
+                alert("Please upload a valid CSV file.");
+            }
+        }
+      
+    </script>
+    
+    <input type="file" id="fileUpload" />
+    <input type="button" id="upload" value="Upload" onclick="Upload()" />
+    <hr />
+  <div id="dvCSV">
+    </div>
+</body>
+</html>
+
