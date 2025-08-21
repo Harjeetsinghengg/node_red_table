@@ -12,7 +12,7 @@ All it does is start up uibuilder.
 
 From uibuilder v6.1.0, it uses the new IIFE client library.
 
-## Folders
+## Folders==
 
 The root folder contains this file. It can be used for other things **but** it will not be served up in the Node-RED web server. _Either_ the `src` or the `dist` folder are served up (along with all of their sub-folders). So the root and any other root sub-folders can be used mostly however you like.
 
