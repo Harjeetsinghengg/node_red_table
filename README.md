@@ -8,7 +8,7 @@ It does not use any frameworks and has no other dependencies.
 
 It demonstrates that you can use uibuilder purely with HTML/JavaScript or even just HTML and still easily build a simple, dynamic, data-driven user interface with the help of Node-RED.
 
-All it does is start up uibuilder.
+All it does is start up uibuilder
 
 From uibuilder v6.1.0, it uses the new IIFE client library.
 
